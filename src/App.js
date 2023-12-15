@@ -294,8 +294,8 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
 
   function displayRating() {
     if (watched.some((el) => el.imdbID === selectedId)) {
-      const match = watched.filter((el) => el.imdbID === selectedId);
-      return `You rated this movie : ${match.at(0).userRating}/10 ⭐`;
+      const match = watched.find((el) => el.imdbID === selectedId);
+      return `You rated this movie : ${match.userRating} / 10 ⭐`;
     }
   }
 
