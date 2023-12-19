@@ -38,7 +38,7 @@ export default function App() {
     <>
       <NavBar>
         <Search query={query} setQuery={setQuery} />
-        <NumResults movies={movies} />
+        {movies.length > 0 && <NumResults movies={movies} />}
       </NavBar>
 
       <Main>
