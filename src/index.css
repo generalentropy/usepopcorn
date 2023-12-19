@@ -233,6 +233,7 @@ body {
   font-weight: 600;
 }
 
+
 .summary p {
   display: flex;
   align-items: center;
@@ -246,19 +247,31 @@ body {
   font-size: 1.4rem;
 }
 
-.details header {
-  display: flex;
+.movie-poster img{
+  display: block; 
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%; 
+  object-fit: cover;
+  height: auto; 
+
 }
+
+.movie-poster{
+
+width: 100%; 
+height: 620px; 
+display: block; 
+overflow: hidden; 
+
+}
+
 
 .details section {
   padding: 4rem;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-}
-
-.details img {
-  width: 33%;
 }
 
 .details-overview {

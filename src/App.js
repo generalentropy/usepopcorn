@@ -342,14 +342,16 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
             <button className="btn-back" onClick={onCloseMovie}>
               <BackIcon />
             </button>
-            <img
-              src={
-                poster === "N/A" || poster === undefined
-                  ? DEFAULT_POSTER
-                  : poster
-              }
-              alt={`Poster of ${movie}`}
-            ></img>
+            <div className="movie-poster">
+              <img
+                src={
+                  poster === "N/A" || poster === undefined || poster === ""
+                    ? DEFAULT_POSTER
+                    : poster
+                }
+                alt={`Poster of ${movie}`}
+              ></img>
+            </div>
             <div className="details-overview">
               <h2>{title}</h2>
               <p>
@@ -435,10 +437,24 @@ function WatchedSummary({ watched }) {
   );
 }
 
+// src={
+//   poster === "N/A" || poster === undefined
+//     ? DEFAULT_POSTER
+//     : poster
+// }
+
 function WatchedMovie({ movie, onDeleteWatched }) {
+  console.log(movie);
   return (
     <li>
-      <img src={movie.poster} alt={`${movie.title} poster`} />
+      <img
+        src={
+          movie.poster === "N/A" || movie.poster === undefined
+            ? DEFAULT_POSTER
+            : movie.poster
+        }
+        alt={`${movie.title} poster`}
+      />
       <h3>{movie.Title}</h3>
       <div>
         <p>
